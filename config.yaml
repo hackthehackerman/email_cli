@@ -1,0 +1,5 @@
+imap:
+  address: outlook.office365.com:993
+credentials:
+  - email: email
+    password: pwd
