@@ -109,7 +109,7 @@ func main() {
 					if err != nil {
 						log.Fatal(err)
 					}
-					WriteMail(header, text)
+					WriteMail(header, cred.Email, text)
 				}
 			}
 
@@ -177,7 +177,8 @@ func Text(m *mail.Message) (text string, err error) {
 	return sb.String(), nil
 }
 
-func WriteMail(header mail.Header, text string) {
+func WriteMail(header mail.Header, account string, text string) {
+	log.Println("For Account:", account)
 	log.Println("Date:", header.Get("Date"))
 	log.Println("From:", header.Get("From"))
 	log.Println("To:", header.Get("To"))
